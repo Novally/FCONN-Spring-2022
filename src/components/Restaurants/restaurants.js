@@ -1,22 +1,19 @@
-import { getRestaurant } from '../../actions/restaurants';
-
 import React from 'react';
 import { Card, Grid, CardMedia, CardContent, CardActions, Button, Typography, CardActionArea } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
 import useStyles from './styles';
-import restaurants from '../../reducers/restaurants';
-import { fetchRestaurant } from '../../api/index.js';
-import Restaurant from './Restraunt/restaurant';
+// import restaurant from '../../reducers/restaurants';
+// import { fetchRestaurant } from '../../api/index.js';
+import Restaurant from './Restaurant/restaurant';
 
 const Restaurants = ({ setCurrentId }) => {
   const { restaurants, isLoading } = useSelector((state) => state.restaurants);
   const classes = useStyles();
-
   
 // Everything commented out below is somewhat working code to automatically display
 //    restaurants.  It is just not connected to the backend?
-  return (
+  return (     
     <Grid container alignItems="stretch" spacing={3}>
         <Card className={classes.grid} raised elevation={6}>
           {/* The CardActionArea will make the whole card interactable */}
@@ -29,6 +26,18 @@ const Restaurants = ({ setCurrentId }) => {
           />
           <CardContent>
             <Typography variant="h5" component="div" className={classes.temp_rest}>
+
+            {/* {restaurants?.map((restaurant) => (
+              <Grid key={restaurant._id} item xs={12} sm={12} md={6} lg={3}>
+                <Restaurant restaurant={console.log(restaurant.name)} setCurrentId={setCurrentId} />
+              </Grid>
+            ))} */}
+
+            <Restaurant restaurant={Restaurants} setCurrentId={setCurrentId} />
+             <Typography variant="body2">
+               {console.log(Restaurants.name)}
+              </Typography>
+
               Champy's
             </Typography>
             <Typography variant="body2" color="text.secondary">

@@ -52,7 +52,7 @@ const Post = ({ post, setCurrentId }) => {
 
   return (
     
-    console.log(post.name),
+    console.log(post.title),
     <Card className={classes.card} raised elevation={6}>
       <ButtonBase
         component="span"

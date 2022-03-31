@@ -9,6 +9,7 @@ import useStyles from './styles';
 
 //Doing this will make load times faster. Look up Code Splitting to learn more
 const PostDetails = lazy(() => import('./components/PostDetails/PostDetails'));
+const RestDetails = lazy(() => import('./components/RestDetails/RestDetails'));
 const Home = lazy(() => import('./components/Home/home'));
 const Restaurants = lazy(() => import("./components/Restaurants/restaurants"));
 const CreatorOrTag = lazy(() => import("./components/CreatorOrTag/CreatorOrTag"));
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/posts/search" exact component={Home} />
               <Route path="/posts/:id" exact component={PostDetails} />
               <Route path="/restaurants" exact component={Restaurants} />
+              <Route path="/restaurants/:id" exact component={RestDetails} />
               <Route path="/mapContainer" exact component={MapContainer} />
               <Route path="/surveyContainer" exact component={SurveyContainer} />
               <Route path={['/creator/:name', '/tags/:name']} component={CreatorOrTag} />
